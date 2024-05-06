@@ -1,0 +1,282 @@
+<html>
+    <head>
+        <title>Grants</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <style>
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #2a201c;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 800px;
+}
+
+.content {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 3.6rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+p {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+select {
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    border: 1px solid #d3ad7f;
+    background-color: transparent;
+    color: #fff;
+    text-align-last: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+select option {
+    background-color: #2a201c;
+    color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 2rem;
+}
+
+table th,
+table td {
+    padding: 1rem;
+    border: 1px solid #d3ad7f;
+    text-align: left;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+        </style>
+    </head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+    <body>
+      <div class="container">
+        <div class="content">
+            <h2>Grants for Students</h2>
+            <p>The Research Development Office has developed a database of currently available funding opportunities primarily for Indian researchers. This database is constantly being updated. Although most of the available funding comes from the Government of India, there are many other opportunities from India and overseas that can be applied for.</p>
+        </div>
+        
+        <div class="content">
+            <select id="fundingAgency">
+                <option value="">Select Agency</option>
+                <option value="dbt">Funding from Govt of India</option>
+                <option value="dst-serb">International Collaborations</option>
+                <option value="others">Others</option>
+            </select>
+        </div>
+    </div>
+        <table id="govt" class="hidden">
+            <thead>
+              <tr>
+                <th>Agency</th>
+                <th>Scheme</th>
+                <th>Eligibility</th>
+                <th>Deadline</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>British Petroleum (BP)/Birdlife International/<br>Conservation International/Fauna & Flora International/<br>Wildlife Conservation Society</td>
+                <td>Conservation Leadership Programme (CLP)-Kate Stokes Memorial Award</td>
+                <td>Team based projects for individuals from developing countries<br> who are early in their conservation career and demonstrate leadership potential</td>
+                <td>To be announced</td>
+                <td>Upto 3 years</td>
+              </tr>
+              <tr>
+                <td>CIFAR</td>
+                <td>Azrieli Global Scholars program</td>
+                <td>PhD (or equivalent) within first five years of full-time academic position.<br> Research interests aligned with CIFAR research program themes.</td>
+                <td>5th Feb-2020</td>
+                <td>2 years</td>
+              </tr>
+              <tr>
+                <td>DAE</td>
+                <td>Scientific Research Council (DAE-SRC) Award</td>
+                <td>Individual Scientists/Engineers of DAE constituent units or<br> those outside DAE working in public funded institutions. Age less than 47 years</td>
+                <td>Rolling Programme</td>
+                <td>5 years</td>
+              </tr>
+              <tr><td>DBT</td><td>Tata Innovation Fellowship</td><td>Age less than 60 years. emplyoment at a research institute.</td><td>To be announced</td><td>3 years with possibility of 2 year extension</td></tr><tr><td>DBT</td><td>Ramalingaswamy Re-entry Fellowship</td><td>Age less than 45 years. At least 3 years of post-doctoral research experience with last two years from an overseas laboratory.</td><td>To be announced (Jan)</td><td>5 years</td></tr><tr><td>DST-SERB</td><td>Ramanujan Fellowship</td><td>PhD/MD with excellent proven track-record. Age less than 40 years.</td><td>Rolling programme</td><td>5 years</td></tr><tr><td>DST-SERB</td><td>J C Bose national Fellowships</td><td>PhD, less than 68 years. Needs to be nominated by the institute</td><td>Rolling programme</td><td>5 years</td></tr><tr><td>DST</td><td>Swarnajayanti Fellowships</td><td>PhD, Age 30-40 years</td><td>To be announced (April)</td><td>5 years</td></tr><tr><td>International Brain Research Organisation (IBRO)</td><td>Return home Fellowship</td><td>Scientists who are developing a successful basic/clinical research career in a developed country and wish to return to their country of origin or to a less developed country</td><td>1 September  </td><td></td></tr><tr><td>Lady Tata Memorial Trust</td><td>Young Researcher Award</td><td>Strong scientific leadership with more than 10 years experience running an independent lab</td><td>To be announced</td><td>3+2 years based on review of progress</td></tr><tr><td>SERB</td><td>Science and Technology Award for Research (STAR)</td><td>To recognize and reward outstanding performance of Principal Investigators (PIs) of SERB Projects.</td><td>27-July-2020</td><td>3 years</td></tr><tr><td>SERB</td><td>POWER Grant</td><td>To create a funding framework for empowering women researchers in Science, Technology and Innovation(STI)</td><td>31 Dec-2020</td><td>3 years</td></tr><tr><td>DBT-Wellcome Trust India Alliance</td><td>Margdarshi Fellowship</td><td>Strong scientific leadership with more than 10 years experience running an independent lab</td><td>No longer accepting applications to this scheme</td><td>5 years</td></tr><tr><td>DBT-Wellcome Trust India Alliance</td><td>Intermediate Research Fellowship</td><td>4-7 years PD experience 30 July-2020 (Prelim)</td><td></td></tr><tr><td></td><td>5 years</td></tr><tr><td>DBT-Wellcome Trust India Alliance</td><td>Senior Research Fellowship</td><td>7-15 years PD experience  30 July-2020 (Prelim)</td><td></td><td>5 years</td></tr><tr><td>DBT-Wellcome Trust India Alliance</td><td>Intermediate Fellowships for Clinicians and Public Health Researchers in India</td><td>4-7 years of post-MD/post-MS/post-MPH/post-PhD or equivalent research experience</td><td>To be announced (January)</td><td>5 years</td></tr><tr><td>DBT-Wellcome Trust India Alliance</td><td>Senior Fellowships for Clinicians and Public Health Researchers in India</td><td>7-15 years of post-MD/post-MS/post-MPH/post-PhD or equivalent clinical research experience</td><td>To be announced (January)</td><td>5 years</td></tr>
+              </tbody>
+          </table>   
+
+        <table id="intl" class="hidden">
+        <thead>
+            <tr>
+            <th>Agency</th>
+            <th>Scheme</th>
+            <th>Eligibility</th>
+            <th>Deadline</th>
+            <th>Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>AISTDF</td>
+            <td>ASEAN-India collaborative R&D program</td>
+            <td>Faculty member at eligible Indian/ ASEAN MS universities/ publicly funded research institutes. (Max 2 participants per side)</td>
+            <td>Rolling scheme (Applications processed quarterly)</td>
+            <td>24-36 months</td>
+            </tr>
+            <tr>
+            <td>BRICS</td>
+            <td>Coordinated call for BRICS multilateral projects (Pilot call 2016)</td>
+            <td>Partners from at least three BRICS countries. Applicants must meet national eligibility rules.</td>
+            <td>To be announced (November)</td>
+            <td>3 years</td>
+            </tr>
+            <tr>
+            <td>DST-CEFIPRA</td>
+            <td>Industry Academia Research & Development Programme</td>
+            <td>One industrial partner and one research institute each from India & France (2+2 Model).</td>
+            <td>February 1st & July 1st (each year)</td>
+            <td>3 years</td>
+            </tr>
+            <tr>
+            <td>DST-CEFIPRA</td>
+            <td>Collaborative Scientific Research Programme</td>
+            <td>Two scientists (one each from India and France) as Principal Collaborators.</td>
+            <td>January 15th & July 15th (each year)</td>
+            <td>3 years</td>
+            </tr>
+            <tr>
+            <td>DBT/CDTI, Spain</td>
+            <td>Joint Call For Proposals For Technological Co-Operation In The Field Of Biotechnology</td>
+            <td>Biotechnology research projects between India and Spain.</td>
+            <td>To be announced</td>
+            <td>4 years</td>
+            </tr>
+            <tr>
+            <td>DST/JSPS (Japan)</td>
+            <td>Indo-Japan Cooperative Science program (IJCSP)</td>
+            <td>Scientists/faculty members working in UGC recognized Universities/Institutes/Laboratories.</td>
+            <td>To be announced</td>
+            <td>2 years</td>
+            </tr>
+            <tr>
+            <td>DBT-BMBF</td>
+            <td>Indo-German Joint Call for Proposals in the area of Biotechnology</td>
+            <td>Scientists/faculty members working in universities, R&D labs/institutes/companies.</td>
+            <td>To be announced</td>
+            <td>2 years</td>
+            </tr>
+            <tr>
+            <td>DST-DeitY</td>
+            <td>India-UK Collaborative Industrial Research & Development Programme</td>
+            <td>Indian Project Lead must be a commercial company. Academic institutions can participate as co-investigators.</td>
+            <td>To be announced</td>
+            <td>To be announced</td>
+            </tr>
+            <tr>
+            <td>DST-RFBR</td>
+            <td>Indo-Russian Joint Research Call for Proposals</td>
+            <td>Team leaders with full-time positions at universities or research institutes.</td>
+            <td>To be announced</td>
+            <td>2 years</td>
+            </tr>
+            <tr>
+            <td>DST</td>
+            <td>Indo-Belarus Joint Research Programme</td>
+            <td>Leader of a team of scientists in each country with full-time positions at universities or research institutes.</td>
+            <td>To be announced</td>
+            <td>2 years</td>
+            </tr>
+            <tr>
+            <td>Human Frontier in Science Program (HFSP)</td>
+            <td>Young Investigator's grants</td>
+            <td>Junior Independent PI within 5 years of obtaining an independent position.</td>
+            <td>March 30, 2020 (Letter of Intent)</td>
+            <td>3 years</td>
+            </tr>
+            <tr>
+            <td>Human Frontier in Science Program (HFSP)</td>
+            <td>Programme grants</td>
+            <td>Independent PI</td>
+            <td>To be announced (March)</td>
+            <td>3 years</td>
+            </tr>
+            <tr>
+            <td>Human Frontiers in Science Program (HFSP)</td>
+            <td>Career Development Award</td>
+            <td>Held one of two Feeder Fellowships</td>
+            <td>To be announced</td>
+            <td>3 years</td>
+            </tr>
+            <tr>
+            <td>Indo-US Science and Technology Forum</td>
+            <td>Indo-US R & D Joint Networked Center</td>
+            <td>Two Indian and two American scientists from academia and laboratories.</td>
+            <td>To be announced</td>
+            <td>2 years</td>
+            </tr>
+        </tbody>
+        </table>
+
+        <script>
+            const fundingAgencySelect = document.getElementById('fundingAgency');
+            const dbtTable = document.getElementById('govt');
+            const dstSerbTable = document.getElementById('intl');
+    
+            fundingAgencySelect.addEventListener('change', function() {
+                const selectedValue = this.value;
+                dbtTable.classList.add('hidden');
+                dstSerbTable.classList.add('hidden');
+    
+                if (selectedValue === 'dbt') {
+                    dbtTable.classList.remove('hidden');
+                } else if (selectedValue === 'dst-serb') {
+                    dstSerbTable.classList.remove('hidden');
+                } 
+            });
+        </script>
+
+    </body>
+</html>
+

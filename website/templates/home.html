@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI research assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+
+        <div id="name">
+            <a href="/" class="logo"><img src="static\images\nexusLogo.png" alt="" class="logoimg"></a>
+            <p id="name">Welcome, {{user.name}}</p>
+        </div>
+        
+
+        <nav class="navbar">
+            <div id="close" class="fas fa-times"></div>
+            <a href="/" class="nav_item">home</a>
+            <a href="/search" class="nav_item">Paper discovery</a>
+            <a href="/grants" class="nav_item">Grants & More</a>
+            <a href="/feed" class="nav_item">Find your community</a>
+            <a href="/logout" class="nav_item">Logout</a>
+        </nav>
+
+        <div id="menu" class="fas fa-bars"></div>
+
+    </header>
+
+    <section class="home">
+
+        <div class="content">
+            <h1 class="title"><span> Accelerate </span> your <span>Discoveries</span> </h1>
+            <p class="description">A one-stop destination for all research resources</p>
+
+        </div>
+
+        <div class="image">
+            <img src="static\images\man.png" alt="" data-speed="-3" class="move">
+        </div>
+
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+</body>
+</html>

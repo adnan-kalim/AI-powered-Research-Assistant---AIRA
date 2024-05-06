@@ -1,0 +1,55 @@
+/* Basic reset for margins and padding */
+body, h1, p, div {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Sets a readable, neutral font */
+    background-color: #2a201c; /* Light grey background for a less stark contrast */
+    color: #ffffff; /* Dark grey text for easier reading */
+    line-height: 1.6; /* Improves readability */
+    padding: 20px; /* Adds spacing around the content */
+}
+
+h1 {
+    color: #c19764; /* A deep blue for the main title */
+    margin-bottom: 20px; /* Adds space below the title */
+    text-align: center; /* Centers the title */
+}
+
+.summary {
+    background-color: #74584d; /* White background for each summary */
+    border: 1px solid #ddd; /* Light grey border around each summary */
+    padding: 15px; /* Padding inside the summaries */
+    margin-bottom: 10px; /* Space between each summary */
+    border-radius: 8px; /* Rounded corners for the summary boxes */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for 3D effect */
+}
+
+strong {
+    color: #d3ad7f; /* Blue color for emphasized text */
+    font-weight: bold; /* Ensure it's bold */
+}
+
+p {
+    margin-bottom: 10px; /* Adds space below each paragraph for separation */
+}
+
+ul {
+    list-style-type: none; /* Removes bullet points from lists */
+    padding: 0; /* Removes padding */
+}
+
+li {
+    padding-left: 20px; /* Indents list items */
+    text-indent: -20px; /* Aligns text properly with the bullet points */
+}
+
+li::before {
+    content: "•"; /* Adds custom bullet points */
+    color: #0057b8; /* Blue bullet points */
+    display: inline-block;
+    width: 20px; /* Fixed width for alignment */
+    margin-left: -20px; /* Aligns bullets to the edge */
+}

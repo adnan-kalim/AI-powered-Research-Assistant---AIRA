@@ -1,0 +1,54 @@
+c:\Users\adnan\Downloads\CapstoneEverything\Capstone\static\style.cssbody {
+    background-color: #2a201c; /* Dark brown background */
+    color: #fff; /* White text */
+    font-family: 'Arial', sans-serif; /* Clean, readable font */
+    margin: 0;
+    padding: 20px; /* Padding to prevent content from sticking to the edges */
+    text-align: center; /* Centers text */
+}
+
+html {
+    font-size: 16px; /* Base font size */
+}
+
+h1 {
+    font-size: 2.5rem; /* Makes the main title larger */
+    margin-bottom: 2rem; /* Adds space below the title */
+}
+
+ul {
+    display: grid; /* Sets the list to display as a grid */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates columns that adjust number and size dynamically */
+    gap: 1rem; /* Adds gaps between grid items */
+    padding: 0; /* Removes padding */
+    margin: 0 auto; /* Centers the grid */
+    max-width: 1200px; /* Maximum width of the grid */
+    width: 100%; /* Full width */
+}
+
+li {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding inside each item */
+    list-style: none; /* No bullet points */
+    text-align: left; /* Aligns the text to the left */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+h2 {
+    font-size: 1.8rem; /* Size for subtitles */
+    color: #FED766; /* Yellow color for titles */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+p {
+    font-size: 1rem; /* Paragraph font size */
+    line-height: 1.5; /* Line height for better readability */
+    overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+    ul {
+        grid-template-columns: 1fr; /* One column on smaller screens */
+    }
+}

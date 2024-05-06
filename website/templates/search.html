@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Search</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+*{
+  font-family: 'Nunito',sans-serif;
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #2a201c;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  padding: 2rem 9%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 6rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+form {
+  text-align: center;
+}
+
+label {
+  font-size: 2rem;
+  color: #d3ad7f;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+input[type="text"] {
+  padding: 1rem;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid #d3ad7f;
+  margin: 10px auto;
+  display: block;
+  font-size: 1.6rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #fff;
+}
+
+input[type="submit"], button {
+  padding: 1rem 2rem;
+  background-color: #d3ad7f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover, button:hover {
+  background-color: #b68a4f;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Get your papers</h1>
+
+        <form method="POST" id="choice">
+            <label for="query">Enter your topic</label>
+            <br>
+            <input type="text" id="query" name="query" placeholder="Enter search query here">
+            <br>
+            <button type="button" onclick="setActionAndSubmit('/search')">List Abstracts</button>
+            <button type="button" onclick="setActionAndSubmit('/process')">Summarise via AI</button>
+        </form>
+    </div>
+    <script>
+      function setActionAndSubmit(action) {
+          var form = document.getElementById('choice');
+          form.action = action;
+          form.submit(); // Manually submit the form after the action is set
+      }
+  </script>
+</body>
+</html>

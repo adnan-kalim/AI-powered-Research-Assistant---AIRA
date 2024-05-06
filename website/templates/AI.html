@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summarized Abstracts</title>
+    <link rel="stylesheet" href="static/styleAI.css">
+</head>
+<body>
+    <h1>Summarized Abstracts</h1>
+    {% for summary in summaries %}
+    <div class="summary">
+        {{ summary | safe }}
+    </div>
+    {% endfor %}
+</body>
+</html>

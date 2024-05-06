@@ -1,0 +1,78 @@
+<html>
+    <head><title>Welcome to AIRA</title></head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='loginStyle.css')}}">
+      
+    <body>
+        <div class="wrapper">
+            <div class="title-text">
+            <div class="title login">
+                Login Form
+            </div>
+            <div class="title signup">
+                Signup Form
+            </div>
+            </div>
+            <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="signup">
+                <label for="login" class="slide login" onclick="goToLogin()">Login</label>
+                <label for="signup" class="slide signup" onclick="go()">Sign up</label>
+                <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+                <form method="POST">
+                    <div class="field">
+                        <input type="text" placeholder="Email Address" name="email" required>
+                    </div>
+
+                    {% with messages = get_flashed_messages(with_categories=true) %} 
+                    {% if messages %} 
+                      {% for category, message in messages %} 
+                        {% if category =='error' %}
+                          <div class="alert alert-danger alter-dismissable fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          {% else %}
+                          <div class="alert alert-success alert-dismissable fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                        {% endif %} 
+                      {% endfor %} 
+                    {% endif %} 
+                  {% endwith %}
+
+                    <div class="field">
+                        <input type="password" placeholder="Password" name="pwd" required>
+                    </div>
+                    <div class="pass-link">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Login">
+                    </div>
+                    <div class="signup-link">
+                      Not a member ? <a href='/signup'>Sign up now !</a>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+        <script>
+            function go() {
+              window.location.href = "/signup";
+            }
+
+            function goToLogin() {
+              window.location.href = "/login";
+            }
+        </script>
+    </body>
+</html>

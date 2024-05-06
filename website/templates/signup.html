@@ -1,0 +1,108 @@
+<html>
+    <head><title>Welcome to AIRA</title></head>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='loginStyle.css')}}">
+
+    {% with messages = get_flashed_messages(with_categories=true) %} 
+        {% if messages %} 
+          {% for category, message in messages %} 
+            {% if category =='error' %}
+              <div class="alert alert-danger alter-dismissable fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              {% else %}
+              <div class="alert alert-success alert-dismissable fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            {% endif %} 
+          {% endfor %} 
+        {% endif %} 
+      {% endwith %}
+
+    <div class="wrapper">
+        <div class="title-text">
+        <!-- <div class="title login">
+            Login Form
+        </div> -->
+        <div class="title signup">
+            Signup Form
+        </div>
+        </div>
+        <div class="form-container">
+        <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked>
+            <input type="radio" name="slide" id="signup">
+            <label for="login" class="slide login">Login</label>
+            <label for="signup" class="slide signup">Sign up</label>
+            <div class="slider-tab"></div>
+        </div>
+        <div class="form-inner">
+            <form method="POST" onsubmit="return formValidate()">
+                <h3>AIRA is ready to assist you.</h3>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" />
+                </div>
+                <div class="field">
+                    <label for="firstname">Name</label>
+                    <input type="text" class="form-control" id="firstname" name="name" placeholder="Enter First Name" />
+                </div>
+                <div class="field">
+                    <label for="desig">Designation</label>
+                    <input type="text" class="form-control" id="desig" name="desig" placeholder="Enter your designation" />
+                </div>
+                <div class="field">
+                    <label for="pwd">Password</label>
+                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter Password" />
+                </div>
+                <div class="field">
+                    <label for="confirmpwd">Confirm Password</label>
+                    <input type="password" class="form-control" id="cpwd" name="cpwd" placeholder="Confirm your Password" />
+                </div>
+                <input type="submit" class="btn">
+                <div class="signup-link">
+                    Not a member? <a href="/signup">Sign up now</a>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    <script>
+        const loginText = document.querySelector(".title-text .login");
+        const loginForm = document.querySelector("form.login");
+        const loginBtn = document.querySelector("label.login");
+        const signupBtn = document.querySelector("label.signup");
+        const signupLink = document.querySelector("form .signup-link a");
+        signupBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "-50%";
+        loginText.style.marginLeft = "-50%";
+        });
+        loginBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "0%";
+        loginText.style.marginLeft = "0%";
+        });
+        signupLink.onclick = (()=>{
+        signupBtn.click();
+        return false;
+        });
+
+        function formValidate() {
+            var isValid = true
+            var p1 = document.getElementById("pwd").value;
+            var p2 = document.getElementById("cpwd").value;
+
+            if(p1 !== p2) {
+                alert("Passwords do not match!");
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</html>

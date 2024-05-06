@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleSearch.css') }}">
+
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% if abstracts %}
+        <ul>
+        {% for title, abstract in abstracts %}
+            <li>
+                <h2>{{ title }}</h2>
+                <p>{{ abstract }}</p>
+            </li>
+        {% endfor %}
+        </ul>
+        <p>The abstracts have also been saved to a PDF file (abstracts.pdf).</p>
+    {% else %}
+        <p>No abstracts found for your query.</p>
+    {% endif %}
+</body>
+</html>
