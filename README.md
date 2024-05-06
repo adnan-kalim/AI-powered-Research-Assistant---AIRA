@@ -1,5 +1,8 @@
 ## AIRA: Accelerating Research for Students
 
+![image](https://github.com/adnan-kalim/AI-powered-Research-Assistant---AIRA/assets/98105051/7e7945a9-20e7-4f93-8a00-fa5c08927225)
+
+
 AIRA is a web platform designed to empower student researchers by streamlining the research process. It tackles three key challenges faced by students:
 
 * **Information overload:** Finding relevant research papers can be time-consuming. AIRA provides a comprehensive and searchable database of research papers, allowing students to efficiently locate relevant literature.
